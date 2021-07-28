@@ -118,14 +118,12 @@ export default function AdHealth() {
                     <thead className="bg-gray-50">
                       <tr className="text-gray-600 text-left">
                         <th
-                          className="font-semibold text-sm uppercase px-6 py-4"
-                          width="25%"
+                          className="font-semibold text-sm uppercase px-6 py-4 w-1/4"
                         >
                           Nome
                         </th>
                         <th
-                          className="font-semibold text-sm uppercase px-6 py-4"
-                          width="75%"
+                          className="font-semibold text-sm uppercase px-6 py-4 w-3/4"
                         >
                           Descrição
                         </th>
