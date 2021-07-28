@@ -1,0 +1,5 @@
+export * from './ProductController'
+export * from './ProductMultipleController'
+export * from './ProductSearchController'
+export * from './SimilarProductsController'
+export * from './SerializeProductsController'

@@ -1,0 +1,103 @@
+.container {
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.content {
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.presentation {
+  min-height: calc(100vh - 200px);
+  display: flex;
+}
+
+.jumbotron {
+  min-height: calc(100vh - 137px);
+  display: flex;
+  perspective-origin: 50% 50%;
+}
+
+.textShadow {}
+
+.background {
+  background: #ededed;
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding:0;
+  margin:0px;
+}
+
+.svgIcon {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+
+.svgIcon:nth-child(2n) {
+  border-color: #FFF ;
+}
+
+.svgIcon:nth-child(2) {
+  animation-delay: 2s;
+  left: 20vw;
+  top: 40vh;
+}
+
+.svgIcon:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+
+.svgIcon:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+
+.svgIcon:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 80vh;
+}
+
+.svgIcon:nth-child(6) {
+  animation-delay: 10s;
+  left: 90vw;
+  top: 80vh;
+}
+
+/* Animate Background*/
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}

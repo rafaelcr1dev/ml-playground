@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+}
+
+.container a {
+  flex-grow: 1;
+  font-size: .7rem;
+}
