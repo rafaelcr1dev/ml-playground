@@ -50,12 +50,12 @@ export default function Comparator() {
           />
 
           <div
-            className={`${baseStyle.content} flex items-center justify-center`}
+            className={`${baseStyle.content} flex items-center justify-center px-2`}
           >
             <div>
               <hgroup className="mb-2">
                 <h1
-                  className={`${baseStyle.textShadow} text-white mb-4 text-white text-shadow`}
+                  className={`${baseStyle.textShadow} text-white text-center lg:text-left mb-4 text-white text-shadow`}
                 >
                   <span className="inline-flex mb-2 text-white items-center justify-center px-1 py-1 leading-none bg-white rounded-full">
                     <Image
@@ -65,16 +65,16 @@ export default function Comparator() {
                       height={28}
                     />
                   </span>
-                  <span className={'font-bold text-6xl mb-2 text-gray-900 block'}>Playground</span>
+                  <span className={'font-bold text-4xl lg:text-6xl mb-2 text-gray-900 block'}>Playground</span>
                 </h1>
                 <h2
-                  className={`${baseStyle.textShadow} mb-2 opacity-50`}
+                  className={`${baseStyle.textShadow} mb-2 opacity-50 text-center lg:text-left`}
                 >
                   Experimente uma nova experiência de compra
                 </h2>
               </hgroup>
 
-              <ul className="flex mb-4 relative">
+              <ul className="flex flex-wrap justify-center mb-4 relative">
                 <li className="p-2">
                   <div className="">
                     <Link href="/comparator">
