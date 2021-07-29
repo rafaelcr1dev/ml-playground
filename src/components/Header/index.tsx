@@ -28,7 +28,7 @@ export default function Header({ activeIdItem = 0 }: IProps) {
     <header className={"bg-white"}>
       <div className={baseStyle.content}>
         <div className="flex flex-wrap">
-          <div className="w-full md:w-1/4 p-4 text-gray-200 flex">
+          <div className="w-full lg:w-1/4 p-4 text-gray-200 flex justify-center lg:justify-start">
             <Link href="/">
               <a className="flex flex-wrap flex-row items-center">
                 <Image
@@ -41,11 +41,11 @@ export default function Header({ activeIdItem = 0 }: IProps) {
               </a>
             </Link>
           </div>
-          <div className="w-full md:w-3/4 text-right text-gray-700">
-            <div className="hidden sm:block sm:ml-6">
-              <div className="flex justify-end">
+          <div className="w-full lg:w-3/4 text-right text-gray-700">
+            <div className="sm:block lg:ml-6 overflow-x-auto lg:flex md:justify-center lg:justify-end">
+              <div className="flex" style={{'width': `${menuItems.length * 150}px`}}>
                 {menuItems.map((item, key) => (
-                  <div key={`nav-${item.id}`} className="flex justify-end">
+                  <div key={`nav-${item.id}`} className="flex justify-end md:w-auto lg:w-auto text-center">
                     <Link href={item.link}>
                       <a
                         dangerouslySetInnerHTML={{ __html: item.text }}

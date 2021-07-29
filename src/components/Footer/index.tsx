@@ -3,7 +3,7 @@ import footerStyle from "../../styles/footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className={`${footerStyle.container} bg-white py-6 flex flex-row h-full`}>
+    <footer className={`${footerStyle.container} text-center lg:text-left bg-white py-6 flex flex-row h-full`}>
       <div className={baseStyle.content}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

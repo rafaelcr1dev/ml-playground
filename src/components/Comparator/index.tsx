@@ -57,11 +57,11 @@ export default function Comparator() {
           onSubmit={handleSubmit}
         />
 
-        <section className={`${baseStyle.presentation} py-8`}>
+        <section className={`${baseStyle.presentation} py-8 px-3`}>
           {products.length && !loading ? (
             <div className={baseStyle.content}>
               <hgroup className="mb-6">
-                <h1 className="text-3xl mb-2">
+                <h1 className="text-2xl lg:text-3xl mb-2">
                   Compare e encontre o <b className="text-blue-500">produto</b> ideal para você
                 </h1>
                 <h2 className="text-sm text-gray-600">
@@ -69,12 +69,12 @@ export default function Comparator() {
                 </h2>
               </hgroup>
               <div className={"compare-table text-sm overflow-x-auto pb-1"}>
-                <table className="table-fixed shadow border rounded-lg bg-white divide-y divide-gray-200 overflow-hidden">
+                <table style={{'width': `${(products.length * 250) + 100}px`}} className="table-fixed shadow border rounded-lg bg-white divide-y divide-gray-200 overflow-hidden">
                   <thead>
                     <tr className="text-gray-600 text-left">
                       <td
                         className="px-4 py-4 border-l bg-gray-50 font-semibold"
-                        width="60px"
+                        style={{'width': '100px'}}
                       >
                         Produto
                       </td>
@@ -82,8 +82,8 @@ export default function Comparator() {
                         <td
                           key={`image-thumb-` + key}
                           className="px-4 py-4 border-l text-center relative"
-                          width="240px"
                           valign="top"
+                          style={{'width': '250px'}}
                         >
                           <a
                             href="#"
@@ -398,13 +398,13 @@ export default function Comparator() {
                   {!errorMessage ? (
                     <Presentation>
                       <span className="mb-2 border border-gray-200 rounded-full text-center p-4">
-                        <IoIosGitCompare size="74" className="text-blue-500" />
+                        <IoIosGitCompare size="48" className="text-blue-500" />
                       </span>
-                      <h1 className="text-2xl mb-2">
+                      <h1 className="text-1xl lg:text-2xl mb-2 text-center lg:text-left">
                         Compare as principais características dos produtos antes
                         de comprar
                       </h1>
-                      <p className="text-gray-400 flex items-center">
+                      <p className="text-gray-400 text-sm flex items-center">
                         <span className="mr-1">
                           <FiArrowUpLeft size="24" />
                         </span>

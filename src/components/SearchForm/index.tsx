@@ -18,10 +18,10 @@ export default function SearchForm({ onSubmit, placeholderText, buttonText }: IP
   }, [value])
 
   return (
-    <section className={searchStyle.container + ' pt-3 pb-3 border-b border-gray-200'}>
+    <section className={searchStyle.container + ' pt-3 pb-3 border-b border-gray-200 px-3'}>
       <div className={baseStyle.content}>
         <div className="w-full flex">
-          <form className="w-2/5" onSubmit={e => handleSubmit(e)} autoComplete="off">
+          <form className="w-full lg:w-2/5" onSubmit={e => handleSubmit(e)} autoComplete="off">
             <div className="flex">
               <input value={value} onChange={e => setValue(e.target.value)} className="shadow appearance-none  mr-2 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="search" placeholder={placeholderText} required />
               <button className="border-b-2 font-bold border-blue-600 text-sm bg-blue-500 py-2 px-3 rounded text-white" aria-current="page">
