@@ -61,31 +61,33 @@ export default function MarketValue() {
         
         <section className={`${baseStyle.presentation} py-8`}>
           {(product && product.id && !loadingProduct) ? (
-          <div className={baseStyle.content}>
+          <div className={`${baseStyle.content} px-3`}>
             <hgroup className="mb-6">
-              <h1 className="text-3xl mb-2">Valor de mercado</h1>
+              <h1 className="text-2xl lg:text-3xl mb-2">
+                Valor de mercado
+              </h1>
             </hgroup>
 
             <Product product={product}>
               <>
                 {!similarProducts.length ? (
                     <div className={'flex items-center'}>
-                      <div className={'mr-4'}>
-                        <FiCheckCircle size={40} className={'text-green-500'} />
-                      </div>
-                      <div>
-                        <span className={'font-bold text-green-500 text-2xl'}>Aprovado!</span>                       
-                        <p className={'text-sm text-gray-500'}>Esse produto está com o melhor preço</p>
+                      <div className="w-full">
+                        <span className={'font-bold text-green-500 text-2xl flex justify-center md:justify-start item-'}>
+                          <FiCheckCircle size={27} className={'text-green-500 mr-2'} />
+                          Aprovado!
+                        </span>                       
+                        <p className={'text-sm text-gray-500 mt-1 text-center md:text-left'}>Esse produto está com o melhor preço</p>
                       </div>
                     </div>
                   ) : (
                     <div className={'flex items-center'}>
-                      <div className={'mr-4'}>
-                        <AiOutlineWarning size={40} className={'text-yellow-500'} />
-                      </div>
-                      <div>
-                        <span className={'font-bold text-yellow-500 text-2xl'}>Atenção!</span>                       
-                        <p className={'text-sm text-gray-500'}>Existe {similarProducts.length} produto(s) com o melhor preço</p>
+                      <div className="w-full">
+                        <span className={'font-bold text-yellow-500 text-2xl flex justify-center md:justify-start'}>
+                          <AiOutlineWarning size={27} className={'text-yellow-500 mr-2'} />
+                          Atenção!
+                        </span>                       
+                        <p className={'text-sm text-gray-500 mt-1 text-center md:text-left'}>Existe {similarProducts.length} produto(s) com o melhor preço</p>
                       </div>
                     </div>
                 )}
@@ -100,8 +102,8 @@ export default function MarketValue() {
 
                 <div className="shadow border rounded-lg bg-white mb-6 divide-y divide-gray-200 divide-y height-full overflow-hidden">
                   {similarProducts.map((item: any, key: number) => (
-                    <div key={`product-search-${key}`} className={`${baseStyle.currentProduct} px-4 py-4 divide-b flex items-center`}>
-                      <div className={`${baseStyle.infoProduct} pr-4 w-3/5 flex items-center`}>
+                    <div key={`product-search-${key}`} className={`px-4 py-4 divide-b flex flex-wrap items-center`}>
+                      <div className={`pr-4 w-full md:w-3/5 flex items-center`}>
                         <div className={`${baseStyle.imageProduct} mr-4`}>
                           <a href={item?.permalink} target="_blank">
                             <img width="90" height="90" src={item?.thumbnail} className="ui-search-result-image__element" alt="Console Playstation 4 1tb Bundle 18 - Ps4" />
@@ -123,14 +125,15 @@ export default function MarketValue() {
                           </div>
                         </div>
                       </div>
-                      <div className={`${baseStyle.resultsProduct} w-2/5`}>
-                        <div className={`${baseStyle.resultsOk} flex items-center`}>
-                          <div className={`${baseStyle.icon} mr-4`}>
-                            <FiArrowDownCircle size={40} className={'text-green-500'} />
-                          </div>
-                          <div>
-                            <span className={'font-bold text-green-500 text-2xl'}>{item.discount}%</span>                       
-                            <p className={'text-sm text-gray-500'}>Esse produto está com um preço melhor</p>
+                      <div className={`w-full mt-4 md:mt-0 md:w-2/5`}>
+                        <div className={`flex items-center`}>
+                          <div className="w-full">
+                            <span className={'font-bold text-green-500 text-2xl flex justify-center items-center md:justify-start'}>
+                              <FiArrowDownCircle size={27} className={'text-green-500 mr-2'} /> {item.discount}%
+                            </span>                       
+                            <p className={'text-sm text-gray-500 mt-1 text-center md:text-left'}>
+                              Esse produto está com um preço melhor
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -151,20 +154,20 @@ export default function MarketValue() {
           ) : (
             <>
               {loadingProduct ? (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3`}>
                   {!errorMessage ? (
                   <Presentation>
                     <span className="mb-2 border border-gray-200 rounded-full text-center p-4">
-                      <MdAttachMoney size="74" className="text-blue-500" />
+                      <MdAttachMoney size="48" className="text-blue-500" />
                     </span>
-                    <h1 className="text-2xl mb-2">
+                    <h1 className="text-1xl lg:text-2xl mb-2 text-center lg:text-left">
                       Veja se o produto está dentro do valor de mercado
                     </h1>
-                    <p className="text-gray-400 flex items-center">
+                    <p className="text-gray-400 text-sm flex items-center">
                       <span className="mr-1">
                         <FiArrowUpLeft size="24" /> 
                       </span>
