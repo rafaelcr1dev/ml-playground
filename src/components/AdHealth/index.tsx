@@ -78,7 +78,7 @@ export default function AdHealth() {
         {(product && product.id && !loadingProduct) ? (
           <div className={`${baseStyle.content} px-3 lg:px-0`}>
             <hgroup className="mb-6">
-              <h1 className="text-2xl lg:text-3xl mb-2">É fraude?</h1>
+              <h1 className="text-2xl lg:text-3xl mb-2">Saúde do anuncio</h1>
               <h2 className="text-sm text-gray-600">
                 Verificaremos se esse anuncio é seguro
               </h2>
