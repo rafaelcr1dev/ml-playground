@@ -14,9 +14,6 @@ export class ResultCanceledTotalController {
       seller: { seller_reputation },
     } = searchProduct[0]
 
-    console.log("searchProduct", searchProduct)
-
-
     const percentTransactionsCanceled = Math.floor(
       (seller_reputation.transactions.canceled * 100) /
         seller_reputation.transactions.completed

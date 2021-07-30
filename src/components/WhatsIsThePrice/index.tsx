@@ -18,7 +18,7 @@ import Loading from "../Loading"
 
 import { useWhatIsThePrice } from "../../hooks/what-is-the-price/WhatIsThePriceProvider"
 
-const TIME = 5000
+const TIME = 10000
 let interval: any
 
 const currencyConfig = {
@@ -274,10 +274,33 @@ export default function WhatsIsThePrice() {
                             <VscError size={48} className={"text-red-500"} />
                           </span>
                           <h1 className="text-1xl lg:text-2xl mb-2">Não foi dessa vez!</h1>
-                          <p className="text-gray-500 flex items-center mb-5 text-center text-sm">
-                            Você não acertou o valor {yourPriceMasked} de{" "}
-                            {product.title}. :(
+                          <p className="text-gray-500 flex items-center mb-4 text-center text-sm">
+                            {product.title}.
                           </p>
+                          <div className="mb-6 w-full lg:w-2/4">
+                            <ul className="flex flex-wrap">
+                              <li className="p-2 w-2/4 text-left">
+                                <div className="border border-gray-200 p-4 shadow rounded">
+                                  <span className="text-sm block">
+                                    Preço incorreto
+                                  </span>
+                                  <p className="text-2xl text-red-500 line-through">
+                                    {yourPriceMasked}
+                                  </p>
+                                </div>
+                              </li>
+                              <li className="p-2 w-2/4 text-left">
+                                <div className="border border-gray-200 p-4 shadow rounded">
+                                  <span className="text-sm block">
+                                    Preço correto
+                                  </span>
+                                  <p className="text-2xl text-green-500 font-bold">
+                                    {product?.formatted_price} 
+                                  </p>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
                           <div className="text-center">
                             <a
                               href="/"
@@ -301,7 +324,7 @@ export default function WhatsIsThePrice() {
                             Parabéns!
                           </h1>
                           <p className="text-gray-500 flex items-center mb-5 text-center text-sm">
-                            Você acertou em cheio o valor {yourPriceMasked}<br />
+                            Você acertou em cheio o valor de {yourPriceMasked}<br />
                             {product.title}.
                           </p>
                           <div className="text-center mb-4">
