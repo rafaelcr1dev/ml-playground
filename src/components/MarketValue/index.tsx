@@ -61,7 +61,7 @@ export default function MarketValue() {
         
         <section className={`${baseStyle.presentation} py-8`}>
           {(product && product.id && !loadingProduct) ? (
-          <div className={`${baseStyle.content} px-3`}>
+          <div className={`${baseStyle.content} px-3 md:px-0`}>
             <hgroup className="mb-6">
               <h1 className="text-2xl lg:text-3xl mb-2">
                 Valor de mercado
@@ -73,7 +73,7 @@ export default function MarketValue() {
                 {!similarProducts.length ? (
                     <div className={'flex items-center'}>
                       <div className="w-full">
-                        <span className={'font-bold text-green-500 text-2xl flex justify-center md:justify-start item-'}>
+                        <span className={'font-bold text-green-500 text-2xl flex justify-center md:justify-start'}>
                           <FiCheckCircle size={27} className={'text-green-500 mr-2'} />
                           Aprovado!
                         </span>                       
@@ -154,11 +154,11 @@ export default function MarketValue() {
           ) : (
             <>
               {loadingProduct ? (
-                <div className={`${baseStyle.content} px-3`}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={`${baseStyle.content} px-3`}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   {!errorMessage ? (
                   <Presentation>
                     <span className="mb-2 border border-gray-200 rounded-full text-center p-4">

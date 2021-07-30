@@ -59,7 +59,7 @@ export default function Comparator() {
 
         <section className={`${baseStyle.presentation} py-8 px-3`}>
           {products.length && !loading ? (
-            <div className={baseStyle.content}>
+            <div className={`${baseStyle.content} px-3 md:px-0`}>
               <hgroup className="mb-6">
                 <h1 className="text-2xl lg:text-3xl mb-2">
                   Compare e encontre o <b className="text-blue-500">produto</b> ideal para você
@@ -390,11 +390,11 @@ export default function Comparator() {
           ) : (
             <>
               {loading ? (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   {!errorMessage ? (
                     <Presentation>
                       <span className="mb-2 border border-gray-200 rounded-full text-center p-4">

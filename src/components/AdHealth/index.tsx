@@ -73,12 +73,12 @@ export default function AdHealth() {
         <Header activeIdItem={3} />
         <SearchForm buttonText={'Adicionar'} placeholderText={"Insira a url do produto"} onSubmit={handleSubmit} />
 
-        <section className={baseStyle.presentation + " py-8"}>
+       <section className={`${baseStyle.presentation} py-8`}>
 
         {(product && product.id && !loadingProduct) ? (
-          <div className={baseStyle.content}>
+          <div className={`${baseStyle.content} px-3 md:px-0`}>
             <hgroup className="mb-6">
-              <h1 className="text-3xl mb-2">É fraude?</h1>
+              <h1 className="text-2xl lg:text-3xl mb-2">É fraude?</h1>
               <h2 className="text-sm text-gray-600">
                 Verificaremos se esse anuncio é seguro
               </h2>
@@ -89,22 +89,20 @@ export default function AdHealth() {
                   <>
                       {totalResultsConfirm && !totalResultsWarning ? (
                         <div className={'flex items-center'}>
-                          <div className={'mr-4'}>
-                            <FiCheckCircle size={40} className={'text-green-500'} />
-                          </div>
-                          <div>
-                            <span className={'font-bold text-green-500 text-2xl'}>Aprovado!</span>                       
-                            <p className={'text-sm text-gray-500'}>Esse produto esta seguro para compra</p>
+                          <div className="w-full">
+                            <span className={'font-bold text-green-500 text-2xl flex justify-center md:justify-start'}>
+                              <FiCheckCircle size={27} className={'text-green-500 mr-2'} /> Aprovado!
+                            </span>                       
+                            <p className={'text-sm text-gray-500 text-center md:text-left'}>Esse produto esta seguro para compra</p>
                           </div>
                         </div>
                       ) : (
                         <div className={'flex items-center'}>
-                          <div className={'mr-4'}>
-                            <AiOutlineWarning size={40} className={'text-yellow-500'} />
-                          </div>
-                          <div>
-                            <span className={'font-bold text-yellow-500 text-2xl'}>Alerta!</span>                       
-                            <p className={'text-sm text-gray-500'}>Existe {totalResultsWarning} ponto(s) de atenção nesse anuncio</p>
+                          <div className="w-full">
+                            <span className={'font-bold text-yellow-500 text-2xl flex justify-center md:justify-start'}>
+                              <AiOutlineWarning size={27} className={'text-yellow-500 mr-2'} /> Alerta!
+                            </span>                       
+                            <p className={'text-sm text-gray-500 text-center md:text-left'}>Existe {totalResultsWarning} ponto(s) de atenção nesse anuncio</p>
                           </div>
                         </div>
                       )}
@@ -132,13 +130,13 @@ export default function AdHealth() {
                     <tbody className="divide-y divide-white">
                       {infoResults.map((result: any, key: number) => (
                         <tr key={`result-info--${key}`} className={`${result.isWarning ? 'bg-red-50' : 'bg-green-50'}`}>
-                          <td className="px-6 py-4">
-                            <div className="flex items-center space-x-3">
-                              <div className="inline-flex w-10 h-10">
+                          <td className="px-3 py-3">
+                            <div className="flex space-x-3">
+                              <div className="hidden md:block">
                                 {result.isWarning ? (
-                                  <VscError size="38" className="text-red-500"/>
+                                  <VscError size="24" className="text-red-500"/>
                                 ) : (
-                                  <BiCheckCircle size="38" className="text-green-500"/>
+                                  <BiCheckCircle size="24" className="text-green-500"/>
                                 )}
                               </div>
                               <div>
@@ -162,20 +160,20 @@ export default function AdHealth() {
           ) : (
             <>
               {loadingSimilarProducts ? (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   {!errorMessage ? (
                     <Presentation>
                       <span className="mb-2 border border-gray-200 rounded-full text-center p-4">
-                        <GiHealthNormal size="74" className="text-blue-500" />
+                        <GiHealthNormal size="48" className="text-blue-500" />
                       </span>
-                      <h1 className="text-2xl mb-2">
+                      <h1 className="text-1xl lg:text-2xl mb-2 text-center lg:text-left">
                         Verifique a saúde desse anúncio
                       </h1>
-                      <p className="text-gray-400 flex items-center">
+                      <p className="text-gray-400 text-sm flex items-center">
                         <span className="mr-1">
                           <FiArrowUpLeft size="24" /> 
                         </span>
