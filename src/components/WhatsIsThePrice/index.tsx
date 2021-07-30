@@ -148,9 +148,9 @@ export default function WhatsIsThePrice() {
         <Header activeIdItem={4} />
         <section className={baseStyle.presentation + " py-8"}>
           {isStart && product.id && !loadingWhatIsThePrice ? (
-            <div className={baseStyle.content}>
+            <div className={`${baseStyle.content} px-3 md:px-0`}>
               <hgroup className="mb-6">
-                <h1 className="text-3xl mb-2">Qual é o preço?</h1>
+                <h1 className="text-2xl lg:text-3xl mb-2">Qual é o preço?</h1>
                 <h2 className="text-sm text-gray-600">
                   Acerte o preço e ganhe promoções exclusivas
                 </h2>
@@ -158,10 +158,10 @@ export default function WhatsIsThePrice() {
 
               <div className="shadow border rounded-lg bg-white mb-6 divide-y divide-gray-200 divide-y height-full overflow-hidden">
                 <div
-                  className={"px-4 py-4 divide-b flex items-center relative"}
+                  className={"px-4 py-4 divide-b flex flex-wrap items-center relative"}
                 >
-                  <div>
-                    <div className={"mr-4"}>
+                  <div className={"w-full md:w-2/5"}>
+                    <div className={"mr-0 md:mr-4 pt-32 md:pt-0"}>
                       <img
                         width="auto"
                         height="auto"
@@ -172,7 +172,7 @@ export default function WhatsIsThePrice() {
                       />
                     </div>
                   </div>
-                  <div className={"w-3/5"}>
+                  <div className={"w-full md:w-3/5"}>
                     <div className="mb-2">
                       <span className={"text-sm text-gray-400"}>
                         {product.condition}
@@ -184,7 +184,7 @@ export default function WhatsIsThePrice() {
                       <div>
                         <div className="w-full flex">
                           <form
-                            className="w-2/5"
+                            className="w-full md:w-2/5"
                             autoComplete="off"
                             onSubmit={handleSubmit}
                           >
@@ -232,22 +232,22 @@ export default function WhatsIsThePrice() {
           ) : (
             <>
               {loadingWhatIsThePrice ? (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 md:px-0`}>
                   {!results.finished ? (
                     <>
                       {!errorMessage ? (
                         <Presentation>
                           <span className="mb-4 border border-gray-200 rounded-full p-4">
-                            <BsQuestion size="84" className="text-blue-500" />
+                            <BsQuestion size="48" className="text-blue-500" />
                           </span>
-                          <h1 className="text-2xl mb-2">
+                          <h1 className="text-1xl lg:text-2xl mb-2 text-center lg:text-left">
                             Adivinhe o preço e ganhe promoções exclusivas
                           </h1>
-                          <p className="text-gray-500 flex items-center mb-5">
+                          <p className="text-gray-500 text-sm flex items-center mb-5 text-center lg:text-left">
                             Você terá 5 segundos para adivinhar o preço, boa sorte.
                             :)
                           </p>
@@ -271,10 +271,10 @@ export default function WhatsIsThePrice() {
                       {results.error ? (
                         <Presentation>
                           <span className="mb-4 border border-gray-200 rounded-full p-4">
-                            <VscError size={84} className={"text-red-500"} />
+                            <VscError size={48} className={"text-red-500"} />
                           </span>
-                          <h1 className="text-2xl mb-2">Não foi dessa vez!</h1>
-                          <p className="text-gray-500 flex items-center mb-5">
+                          <h1 className="text-1xl lg:text-2xl mb-2">Não foi dessa vez!</h1>
+                          <p className="text-gray-500 flex items-center mb-5 text-center text-sm">
                             Você não acertou o valor {yourPriceMasked} de{" "}
                             {product.title}. :(
                           </p>
@@ -293,14 +293,14 @@ export default function WhatsIsThePrice() {
                         <Presentation>
                           <span className="mb-4 border border-gray-200 rounded-full p-4">
                             <FiCheckCircle
-                              size="84"
+                              size="48"
                               className="text-green-500"
                             />
                           </span>
-                          <h1 className="text-2xl mb-2 text-green-500 font-bold">
+                          <h1 className="text-1xl lg:text-2xl mb-2 text-green-500 font-bold">
                             Parabéns!
                           </h1>
-                          <p className="text-gray-500 flex items-center mb-5 text-center">
+                          <p className="text-gray-500 flex items-center mb-5 text-center text-sm">
                             Você acertou em cheio o valor {yourPriceMasked}<br />
                             {product.title}.
                           </p>
