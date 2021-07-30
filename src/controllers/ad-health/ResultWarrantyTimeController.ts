@@ -24,7 +24,7 @@ export class ResultWarrantyTimeController {
 
     return getDescriptionResult(
       "Garantia",
-      "Esse produto nao tem garantia. Cuidado!",
+      "Esse produto não tem garantia. Cuidado!",
       true,
       content
     )
