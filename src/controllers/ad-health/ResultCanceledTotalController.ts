@@ -13,6 +13,10 @@ export class ResultCanceledTotalController {
     const {
       seller: { seller_reputation },
     } = searchProduct[0]
+
+    console.log("searchProduct", searchProduct)
+
+
     const percentTransactionsCanceled = Math.floor(
       (seller_reputation.transactions.canceled * 100) /
         seller_reputation.transactions.completed
@@ -26,8 +30,16 @@ export class ResultCanceledTotalController {
         content
       )
 
+    if (isNaN(percentTransactionsCanceled))
+      return getDescriptionResult(
+        "Pedidos",
+        `Esse lojista ainda não possui pedidos concluídos ou cancelados`,
+        true,
+        content
+      )
+
     return getDescriptionResult(
-      "Garantia",
+      "Pedidos",
       `Esse logista tem ${percentTransactionsCanceled}% de pedidos cancelados`,
       true,
       content
