@@ -61,7 +61,7 @@ export default function MarketValue() {
         
         <section className={`${baseStyle.presentation} py-8`}>
           {(product && product.id && !loadingProduct) ? (
-          <div className={`${baseStyle.content} px-3 md:px-0`}>
+          <div className={`${baseStyle.content} px-3 lg:px-0`}>
             <hgroup className="mb-6">
               <h1 className="text-2xl lg:text-3xl mb-2">
                 Valor de mercado
@@ -154,11 +154,11 @@ export default function MarketValue() {
           ) : (
             <>
               {loadingProduct ? (
-                <div className={`${baseStyle.content} px-3 md:px-0`}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={`${baseStyle.content} px-3 md:px-0`}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   {!errorMessage ? (
                   <Presentation>
                     <span className="mb-2 border border-gray-200 rounded-full text-center p-4">

@@ -41,19 +41,19 @@ export default function Videos() {
         
         <section className={baseStyle.presentation + ' py-8'}>
           {!loadingVideos && videos.length ? (
-          <div className={baseStyle.content}>
+          <div className={`${baseStyle.content} px-3 lg:px-0`}>
             <hgroup className="mb-6">
-              <h1 className="text-3xl mb-2">Busca por <b className="text-blue-500">{querySearch}</b></h1>
+              <h1 className="text-2xl lg:text-3xl mb-2">Busca por <b className="text-blue-500">{querySearch}</b></h1>
               <h2 className="text-sm text-gray-600">{videos.length} video(s) foram encontrado(s)</h2>
             </hgroup>
 
             <ul className={'list flex flex-wrap'}>
               {videos.map((video: any, key: number) => (
-                <li key={`video-${key}`} className={'w-1/4 p-2'}>
+                <li key={`video-${key}`} className={'w-full lg:w-1/4 p-2'}>
                   <div className="bg-white shadow">
                     <div className={videosStyle.containerPlayVideo} >
                       <a className={videosStyle.linkPlayVideo} href={video.customData.video.url} target="_blank">
-                        <img width="297" height="180" src={`${video.customData.video.thumb_image}`} className="ui-search-result-image__element" alt="Console Playstation 4 1tb Bundle 18 - Ps4" />
+                        <img width="100%" height="auto" src={`${video.customData.video.thumb_image}`} className="ui-search-result-image__element" alt="Console Playstation 4 1tb Bundle 18 - Ps4" />
                         <div className={videosStyle.iconPlayVideo}>
                           <FaPlay size="48" className="text-white" />
                         </div>
@@ -85,20 +85,20 @@ export default function Videos() {
           ) : (
             <>
               {loadingVideos ? (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={baseStyle.content}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   {!errorMessage ? (
                     <Presentation>
                       <span className="mb-2 border border-gray-200 rounded-full text-center p-4">
-                        <FiPlayCircle size="74" className="text-blue-500" />
+                        <FiPlayCircle size="48" className="text-blue-500" />
                       </span>
-                      <h1 className="text-2xl mb-2">
+                      <h1 className="text-1xl lg:text-2xl mb-2 text-center lg:text-left">
                         Encontre videos dentro de anúncios
                       </h1>
-                      <p className="text-gray-400 flex items-center">
+                      <p className="text-gray-400 text-sm flex items-center">
                         <span className="mr-1">
                           <FiArrowUpLeft size="24" /> 
                         </span>

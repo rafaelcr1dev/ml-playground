@@ -57,9 +57,9 @@ export default function Comparator() {
           onSubmit={handleSubmit}
         />
 
-        <section className={`${baseStyle.presentation} py-8 px-3`}>
+        <section className={`${baseStyle.presentation} py-8`}>
           {products.length && !loading ? (
-            <div className={`${baseStyle.content} px-3 md:px-0`}>
+            <div className={`${baseStyle.content} px-3 lg:px-0`}>
               <hgroup className="mb-6">
                 <h1 className="text-2xl lg:text-3xl mb-2">
                   Compare e encontre o <b className="text-blue-500">produto</b> ideal para você
@@ -69,7 +69,7 @@ export default function Comparator() {
                 </h2>
               </hgroup>
               <div className={"compare-table text-sm overflow-x-auto pb-1"}>
-                <table style={{'width': `${(products.length * 250) + 100}px`}} className="table-fixed shadow border rounded-lg bg-white divide-y divide-gray-200 overflow-hidden">
+                <table style={{'width': `${(products.length * 200) + 100}px`}} className="table-fixed shadow border rounded-lg bg-white divide-y divide-gray-200 overflow-hidden">
                   <thead>
                     <tr className="text-gray-600 text-left">
                       <td
@@ -83,7 +83,7 @@ export default function Comparator() {
                           key={`image-thumb-` + key}
                           className="px-4 py-4 border-l text-center relative"
                           valign="top"
-                          style={{'width': '250px'}}
+                          style={{'width': '200px'}}
                         >
                           <a
                             href="#"
@@ -390,11 +390,11 @@ export default function Comparator() {
           ) : (
             <>
               {loading ? (
-                <div className={`${baseStyle.content} px-3 md:px-0`}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={`${baseStyle.content} px-3 md:px-0`}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   {!errorMessage ? (
                     <Presentation>
                       <span className="mb-2 border border-gray-200 rounded-full text-center p-4">

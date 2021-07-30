@@ -148,7 +148,7 @@ export default function WhatsIsThePrice() {
         <Header activeIdItem={4} />
         <section className={baseStyle.presentation + " py-8"}>
           {isStart && product.id && !loadingWhatIsThePrice ? (
-            <div className={`${baseStyle.content} px-3 md:px-0`}>
+            <div className={`${baseStyle.content} px-3 lg:px-0`}>
               <hgroup className="mb-6">
                 <h1 className="text-2xl lg:text-3xl mb-2">Qual é o preço?</h1>
                 <h2 className="text-sm text-gray-600">
@@ -232,11 +232,11 @@ export default function WhatsIsThePrice() {
           ) : (
             <>
               {loadingWhatIsThePrice ? (
-                <div className={`${baseStyle.content} px-3 md:px-0`}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   <Loading />
                 </div>
               ) : (
-                <div className={`${baseStyle.content} px-3 md:px-0`}>
+                <div className={`${baseStyle.content} px-3 lg:px-0`}>
                   {!results.finished ? (
                     <>
                       {!errorMessage ? (
